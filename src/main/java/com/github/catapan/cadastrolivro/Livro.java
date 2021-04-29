@@ -1,4 +1,4 @@
-package com.github.catapan;
+package com.github.catapan.cadastrolivro;
 
 import java.math.BigDecimal;
 

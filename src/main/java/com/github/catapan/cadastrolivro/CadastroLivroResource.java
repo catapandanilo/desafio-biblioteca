@@ -1,6 +1,4 @@
-package com.github.catapan;
-
-import java.math.BigDecimal;
+package com.github.catapan.cadastrolivro;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -9,7 +7,6 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 @Path("/api/livros")
 @Consumes(MediaType.APPLICATION_JSON)
