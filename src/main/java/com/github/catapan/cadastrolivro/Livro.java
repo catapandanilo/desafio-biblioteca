@@ -25,12 +25,12 @@ public class Livro extends PanacheEntityBase {
   BigDecimal preco;
 
   @NotBlank
-  String ISBN;
+  String isbn;
 
-  public Livro(@NotBlank String titulo, @NotNull BigDecimal preco, @NotBlank String ISBN) {
+  public Livro(@NotBlank String titulo, @NotNull BigDecimal preco, @NotBlank String isbn) {
     this.titulo = titulo;
     this.preco = preco;
-    this.ISBN = ISBN;
+    this.isbn = isbn;
   }
 
   @Deprecated

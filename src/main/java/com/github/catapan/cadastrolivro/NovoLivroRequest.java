@@ -14,15 +14,15 @@ public class NovoLivroRequest {
   BigDecimal preco;
 
   @NotNull
-  String ISBN;
+  String isbn;
 
-  public NovoLivroRequest(String titulo, BigDecimal preco, String ISBN){
+  public NovoLivroRequest(String titulo, BigDecimal preco, String isbn){
     this.titulo = titulo;
     this.preco = preco;
-    this.ISBN = ISBN;
+    this.isbn = isbn;
   }
 
   public Livro toModel() {
-    return new Livro(this.titulo, this.preco, this.ISBN);
+    return new Livro(this.titulo, this.preco, this.isbn);
   }
 }

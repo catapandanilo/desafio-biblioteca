@@ -16,10 +16,10 @@ public class CadastroLivroResource {
     @POST
     @Transactional
     public Long executa(@Valid NovoLivroRequest request) {
-      Livro novoUsuario = request.toModel();
-      novoUsuario.persist();
+      Livro novoLivro = request.toModel();
+      novoLivro.persist();
   
-      return novoUsuario.getId();
+      return novoLivro.getId();
     }
 
 }
