@@ -26,11 +26,9 @@ public class NovoExemplarRequest {
     this.isbn = isbn;
   }
 
-
-
-  // public Exemplar toModel(LivroRepository livroRepository) {
-  //   Livro livro = livroRepository.findByIsbn(isbn);
-  //   Assert.notNull(livro, "Um exemplar não pode ser criado com um livro nulo");
-  //   return new Exemplar(tipoCirculacao, livro);
-  // }
+  public Exemplar toModel() {
+    Livro livro = Livro.findByIsbn(this.isbn);
+    Assert.notNull(livro, "Um exemplar não pode ser criado com um livro nulo");
+    return new Exemplar(tipoCirculacao, livro);
+  }
 }

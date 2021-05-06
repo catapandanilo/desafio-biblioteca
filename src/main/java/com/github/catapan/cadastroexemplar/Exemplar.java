@@ -36,8 +36,4 @@ public class Exemplar extends PanacheEntityBase {
 	public Long getId() {
 		return id;
 	}
-
-	public static Exemplar findByIsbn(String isbn){
-		return find("isbn", isbn).firstResult();
-	}
 }

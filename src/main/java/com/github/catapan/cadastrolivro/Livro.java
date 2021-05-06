@@ -40,4 +40,8 @@ public class Livro extends PanacheEntityBase {
     return this.id;
   }
 
+  public static Livro findByIsbn(String isbn){
+		return find("isbn", isbn).firstResult();
+	}
+
 }
