@@ -1,5 +1,6 @@
 package com.github.catapan.cadastroexemplar;
 
+import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 import javax.ws.rs.Consumes;
@@ -16,9 +17,12 @@ public class NovoExemplarResource {
   @POST
   @Transactional
   public Long executa(@Valid NovoExemplarRequest request) {
-    Exemplar novoExemplar = request.toModel();
-    novoExemplar.persist();
+    // Exemplar novoExemplar = request.toModel();
+    // novoExemplar.persist();
 
-    return novoExemplar.getId();
+    // return novoExemplar.getId();
+    Exemplar exemplar = Exemplar.findByIsbn(request.getIsbn());
+
+    return exemplar.getId();
   }
 }
