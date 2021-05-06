@@ -11,11 +11,11 @@ import org.springframework.util.Assert;
 public class NovoExemplarRequest {
 
   @NotNull
-  private TipoCirculacao tipoCirculacao;
+  public TipoCirculacao tipoCirculacao;
 
   @NotBlank
   @ExistsValue(entity = Livro.class, field = "isbn")
-  private String isbn;
+  public String isbn;
 
   public String getIsbn() {
     return this.isbn;

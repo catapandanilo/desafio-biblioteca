@@ -16,7 +16,7 @@ public class Livro extends PanacheEntityBase {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  public Long id;
 
   @NotBlank
   String titulo;

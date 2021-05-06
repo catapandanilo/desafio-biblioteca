@@ -16,7 +16,7 @@ public class Exemplar extends PanacheEntityBase {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	public Long id;
 
 	@NotNull
 	@ManyToOne
