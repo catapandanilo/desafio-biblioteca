@@ -12,13 +12,13 @@ import javax.ws.rs.core.MediaType;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class NovoExemplarResource {
-  
-  @POST
-  @Transactional
-  public Long executa(@Valid NovoExemplarRequest request) {
-    Exemplar novoExemplar = request.toModel();
-    novoExemplar.persist();
 
-    return novoExemplar.getId();
-  }
+	@POST
+	@Transactional
+	public Long executa(@Valid NovoExemplarRequest request) {
+		Exemplar novoExemplar = request.toModel();
+		novoExemplar.persist();
+
+		return novoExemplar.getId();
+	}
 }

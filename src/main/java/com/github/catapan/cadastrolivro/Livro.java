@@ -14,33 +14,34 @@ import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 @Entity
 public class Livro extends PanacheEntityBase {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long id;
 
-  @NotBlank
-  String titulo;
+	@NotBlank
+	String titulo;
 
-  @NotBlank
-  BigDecimal preco;
+	@NotBlank
+	BigDecimal preco;
 
-  @NotBlank
-  String isbn;
+	@NotBlank
+	String isbn;
 
-  public Livro(@NotBlank String titulo, @NotNull BigDecimal preco, @NotBlank String isbn) {
-    this.titulo = titulo;
-    this.preco = preco;
-    this.isbn = isbn;
-  }
+	public Livro(@NotBlank String titulo, @NotNull BigDecimal preco, @NotBlank String isbn) {
+		this.titulo = titulo;
+		this.preco = preco;
+		this.isbn = isbn;
+	}
 
-  @Deprecated
-  public Livro() {}
+	@Deprecated
+	public Livro() {
+	}
 
-  public Long getId() {
-    return this.id;
-  }
+	public Long getId() {
+		return this.id;
+	}
 
-  public static Livro findByIsbn(String isbn){
+	public static Livro findByIsbn(String isbn) {
 		return find("isbn", isbn).firstResult();
 	}
 

@@ -13,13 +13,13 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class CadastroUsuarioResource {
 
-  @POST
-  @Transactional
-  public Long executa(@Valid NovoUsuarioRequest request) {
-    Usuario novoUsuario = request.toModel();
-    novoUsuario.persist();
+	@POST
+	@Transactional
+	public Long executa(@Valid NovoUsuarioRequest request) {
+		Usuario novoUsuario = request.toModel();
+		novoUsuario.persist();
 
-    return novoUsuario.getId();
-  }
+		return novoUsuario.getId();
+	}
 
 }

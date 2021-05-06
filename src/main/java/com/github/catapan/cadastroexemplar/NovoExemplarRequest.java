@@ -10,25 +10,25 @@ import org.springframework.util.Assert;
 
 public class NovoExemplarRequest {
 
-  @NotNull
-  public TipoCirculacao tipoCirculacao;
+	@NotNull
+	public TipoCirculacao tipoCirculacao;
 
-  @NotBlank
-  @ExistsValue(entity = Livro.class, field = "isbn")
-  public String isbn;
+	@NotBlank
+	@ExistsValue(entity = Livro.class, field = "isbn")
+	public String isbn;
 
-  public String getIsbn() {
-    return this.isbn;
-  }
+	public String getIsbn() {
+		return this.isbn;
+	}
 
-  public NovoExemplarRequest(@NotNull TipoCirculacao tipoCirculacao, @NotBlank String isbn) {
-    this.tipoCirculacao = tipoCirculacao;
-    this.isbn = isbn;
-  }
+	public NovoExemplarRequest(@NotNull TipoCirculacao tipoCirculacao, @NotBlank String isbn) {
+		this.tipoCirculacao = tipoCirculacao;
+		this.isbn = isbn;
+	}
 
-  public Exemplar toModel() {
-    Livro livro = Livro.findByIsbn(this.isbn);
-    Assert.notNull(livro, "Um exemplar não pode ser criado com um livro nulo");
-    return new Exemplar(tipoCirculacao, livro);
-  }
+	public Exemplar toModel() {
+		Livro livro = Livro.findByIsbn(this.isbn);
+		Assert.notNull(livro, "Um exemplar não pode ser criado com um livro nulo");
+		return new Exemplar(tipoCirculacao, livro);
+	}
 }

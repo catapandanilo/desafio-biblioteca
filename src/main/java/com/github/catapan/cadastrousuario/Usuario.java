@@ -11,24 +11,25 @@ import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 @Entity
 public class Usuario extends PanacheEntityBase {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long id;
 
-  @NotNull
-  public TipoUsuario tipoUsuario;
+	@NotNull
+	public TipoUsuario tipoUsuario;
 
 	public Usuario(TipoUsuario tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
 	}
 
 	@Deprecated
-  public Usuario() {}
-    
+	public Usuario() {
+	}
+
 	public Long getId() {
 		return id;
 	}
-	
+
 	public TipoUsuario getTipoUsuario() {
 		return tipoUsuario;
 	}

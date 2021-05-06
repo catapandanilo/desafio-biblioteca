@@ -13,13 +13,13 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class CadastroLivroResource {
 
-    @POST
-    @Transactional
-    public Long executa(@Valid NovoLivroRequest request) {
-      Livro novoLivro = request.toModel();
-      novoLivro.persist();
-  
-      return novoLivro.getId();
-    }
+	@POST
+	@Transactional
+	public Long executa(@Valid NovoLivroRequest request) {
+		Livro novoLivro = request.toModel();
+		novoLivro.persist();
+
+		return novoLivro.getId();
+	}
 
 }

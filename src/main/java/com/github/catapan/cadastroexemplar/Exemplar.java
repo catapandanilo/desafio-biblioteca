@@ -26,7 +26,8 @@ public class Exemplar extends PanacheEntityBase {
 	public TipoCirculacao tipoCirculacao;
 
 	@Deprecated
-  public Exemplar() {}
+	public Exemplar() {
+	}
 
 	public Exemplar(@NotNull TipoCirculacao tipoCirculacao, @NotNull Livro livro) {
 		this.tipoCirculacao = tipoCirculacao;
