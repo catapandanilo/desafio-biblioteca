@@ -6,6 +6,11 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 
 ## Running the application in dev mode
 
+Script to create db using docker:
+```shell script
+docker run -it -p 5432:5432 -e POSTGRES_USER=postgresql -e POSTGRES_PASSWORD=postgresql postgres
+```
+
 You can run your application in dev mode that enables live coding using:
 ```shell script
 ./mvnw compile quarkus:dev
